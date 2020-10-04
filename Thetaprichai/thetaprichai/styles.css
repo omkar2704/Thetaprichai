@@ -1,0 +1,337 @@
+/*Import the fonts used*/
+@import url('https://fonts.googleapis.com/css?family=Courgette|Open+Sans:400,800&display=swap');
+/*Basic reset*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Custom properties*/
+:root {
+    --dark-color: #2d2c2c;
+    --purple-solid: #350a4f;
+    --purple-transparent: rgba(53, 10, 79, .7);
+    --purple-transparent-alt: rgba(53, 10, 79, .5);
+    --purple-light: #8f50fb;
+    --yellow-solid: #fa9e2c;
+    --gradient-color: linear-gradient(to right, var(--yellow-solid), var(--purple-light));
+    --gradient-color-alt: linear-gradient(to right, var(--purple-light), var(--yellow-solid));
+}
+/*Global style */
+html{
+    font-size: 10 px;
+}
+
+body{
+    font-family:'open sans', sans-serif;
+    font-size: 1.6rem;
+       color: darkorange;
+         
+    }
+    a{
+        text-decoration:none ;
+        color: inherit;
+
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    section{
+        padding:5ren 0;
+
+    }
+
+  /*Reuseable styles*/ 
+  .btn{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: .5rem 3.5rem;
+    border: none;
+    border-radius: 10rem;
+    display: inline-flex;
+    align-items: center;
+
+
+}
+  .container{
+      width: 100%;
+      max-width: 120rem;
+      padding: 0 1.5rem;
+      margin: 0 auto;
+  } 
+  .form-btn{
+    margin-top: 25rem;
+    cursor: pointer;
+
+}
+.btn-gradient{
+    background-image: var(--gradient-color);
+}
+
+.btn-gradient:hover{
+    background-image: var(--gradient-color-alt);
+}
+.btn-purple{
+    background-color: var(--purple-solid);
+}
+
+.btn-purple:hover{
+    background-color:blueviolet;
+
+}
+
+.dots{
+    font-size: 2.4rem;
+    margin-left: .5rem;
+    opacity: .75;
+
+}
+
+/*header styles*/
+.header{
+    width: 100%;
+    height: 6rem ;
+display: flex;
+align-items: center;
+position: fixed;
+top: 0;
+left: 0;
+background-color: var(--purple-transparent);
+z-index: 999;
+}
+.header.active{
+    background-color:var(--purple-solid);
+}
+
+/*header style nav*/
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo ing{
+    max-width: 80%;
+}
+
+.hamburger-menue{
+    font-size: 2.6ren;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 1500;
+}
+
+.hamburger-menu .fa-times{
+    display: none;
+    
+}
+.menu-open .hamburger-menu .fa-times{
+    display: block;
+
+}
+.menu-open .hamburger-menu .fa-bars{
+    display: block;
+}
+
+.nav-list{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--purple-solid);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1400;
+    opacity: 0;
+    transform:scale(0);
+    transition: opacity .5s;
+}
+
+.menu-open .nav-list{
+    opacity: 1;
+    transform: scale(1);
+
+}
+
+.nav-item:not(:last-child){
+    margin-bottom: .5rem;
+
+}
+
+.nav-link{
+    display: block;
+    color: white;
+    font-size: 3ren;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1rem;
+
+}/*Hero section styles*/
+.hero{
+    width: 100%;
+    height: 100vh;
+    background: url("./images/hero_background.jpg") center no-repeat;
+    background-size: cover ;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.hero::before{
+    content:'' ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background-color: var(--purple-transparent-alt);
+    z-index: -1;
+
+}
+.main-heading{
+    color: white;
+    line-height: 1;
+    text-shadow: 1px 1px 1rem rgba(0,0,0,.5);
+    margin-bottom: 2.5rem;
+    
+}
+
+.title{
+    font-size: 4.8rem;
+    text-transform: uppercase;
+letter-spacing: 3px;
+
+}
+
+.subtitle{
+    font-size: 3.6rem;
+    font-weight: 300;
+    font-family: 'Courgette', cursive;
+}
+
+
+/*Booking secton styles*/
+.booking{
+    background-image:var(--gradient-color);
+
+}
+
+.input-group{
+    margin-bottom: 1.5rem;
+
+}
+
+.input-label{
+    display: block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    margin-bottom: .1rem;
+
+}
+
+.input,
+.options{
+    outline: none;
+    border: none;
+    width: 100%;
+    min-height: 4rem;
+    padding: 1rem;
+    font-weight: bold;
+    color: darkred;
+    letter-spacing: 2px;
+    font-family: "open sans", sans-serif;
+    resize: none;
+    /*resize: none*/
+}
+
+::placeholder{
+    color: inherit;
+}
+/*Featured rooms section styles*/
+.section-head{
+    text-align: center;
+    margin-bottom: 1rem;
+
+}
+
+.heading{
+    display: block;
+    font-size: 2em;
+    text-transform: uppercase;
+
+
+}
+
+.sub-heading{
+    font-size: 1rem;
+    font-family: 'caurgetts', cursive;
+    font-weight: 300;
+    color: black;
+
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(.1rem,.2fr));
+    grid-gap: .5rem;
+}
+.grid-item{
+    display: -webkit-inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*contact section styles*/
+
+.contact-content{
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form{
+    width: 100%;
+    padding: 2.5rem;
+}
+
+.contact-form .input{
+    display: black;
+    background-color: transparent;
+    
+}
+
+.bar{
+    display: black;
+    position: relative;
+}
+
+.bar::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--purple-light);
+
+}
+.contact-form .input:focus + .bar::after{
+    transform: scaleX(1);
+
+
+}
